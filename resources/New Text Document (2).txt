@@ -1,0 +1,1 @@
+file -> go through content of file -> arrange what we want -> output

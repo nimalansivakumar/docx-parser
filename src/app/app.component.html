@@ -1,0 +1,40 @@
+<div class="w-100 font-inter text-gray">
+  <nav
+    class="w-100 h-20 bg-slate-800 text-white flex justify-center items-center"
+  >
+    <p class="text-3xl font-semibold">Docx Parser</p>
+  </nav>
+  <div class="w-100 h-main flex">
+    <div class="w-1/2 h-full flex flex-col justify-start items-center">
+      <div
+        class="relative w-1/2 h-10 bg-blue-500 rounded-md text-white cursor-pointer m-10 flex flex-col items-center justify-center hover:bg-blue-600"
+      >
+        <p class="absolute">Upload File</p>
+        <input
+          class="w-100 h-100 opacity-0 cursor-pointer"
+          type="file"
+          accept=".docx"
+          (change)="getInput($event)"
+        />
+      </div>
+      <div class="w-full h-auto flex flex-col justify-start items-center">
+        <ul class="w-2/3 text-xl">
+          <li>
+            File Name : {{ parsedData.MetaData.table["$$sfile-name"].value }}
+          </li>
+          <li>
+            File Type : {{ parsedData.MetaData.table["$$sfile-type"].value }}
+          </li>
+          <li>Content Type : {{ parsedData.ContentType }}</li>
+          <li>Error Code : {{ parsedData.Error_Code }}</li>
+          <li>Error Message : {{ parsedData.Error_Message }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="w-1/2 h-auto flex justify-center items-start bg-slate-200 overflow-auto scrollbar-hide">
+      <div class="w-11/12 h-10 my-10">
+        <p class="">{{ parsedData.ActualText }}</p>
+      </div>
+    </div>
+  </div>
+</div>
